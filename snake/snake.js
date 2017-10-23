@@ -32,6 +32,7 @@ function move() {
   // 撞击判断
   if(x < 0 || y < 0 || x > 19 || y > 19 || isOnself(x, y)) {
     alert("游戏结束！");
+    clearInterval(intervalID);
     location.reload(false);
   }
 
@@ -96,4 +97,4 @@ function isIncrease(x, y) {
   return x == food[0] && y == food[1] ? true: false;  
 }
 
-setInterval("move();", 100);
+var intervalID = setInterval(move, 300);
